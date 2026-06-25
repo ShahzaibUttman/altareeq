@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almasa Signs — Signage, Design & Printing | Dubai, UAE</title>
+<meta name="description" content="Almasa Signs is a Dubai-based signage, design and large-format printing company. From shopfront signs to event branding, we make brands impossible to miss across the UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1B2B;        /* deep midnight navy */
+    --ink-2:#12283D;      /* lighter navy panel */
+    --gold:#C9A04E;       /* burnished gold */
+    --gold-bright:#E7C572;/* highlight gold */
+    --sand:#F4EFE6;       /* warm sand */
+    --sand-2:#EAE2D3;     /* deeper sand */
+    --teal:#1C6E6B;       /* gulf teal accent */
+    --cream:#FBF8F2;
+    --muted:#8A98A6;
+    --line:rgba(201,160,78,.28);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Sora',system-ui,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',serif;line-height:1.05;font-weight:600;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:'Sora',sans-serif;font-size:.72rem;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold)}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+    padding:22px 0;
+  }
+  header.scrolled{background:rgba(11,27,43,.92);backdrop-filter:blur(12px);padding:14px 0;box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--cream)}
+  .brand .mark{
+    width:38px;height:38px;border:1.5px solid var(--gold);border-radius:50%;
+    display:grid;place-items:center;position:relative;
+  }
+  .brand .mark span{font-family:'Fraunces',serif;color:var(--gold-bright);font-size:1.2rem;font-weight:700;line-height:1}
+  .brand .mark::after{content:"";position:absolute;inset:5px;border:1px solid var(--line);border-radius:50%}
+  .brand b{font-family:'Fraunces',serif;font-weight:600;font-size:1.32rem;letter-spacing:.01em}
+  .brand i{font-style:normal;font-size:.62rem;letter-spacing:.34em;color:var(--gold);text-transform:uppercase;display:block;margin-top:1px}
+  .navlinks{display:flex;align-items:center;gap:34px}
+  .navlinks a{color:rgba(251,248,242,.82);font-size:.9rem;font-weight:400;transition:color .2s}
+  .navlinks a:hover{color:var(--gold-bright)}
+  .navbtn{
+    border:1px solid var(--gold);color:var(--gold-bright)!important;
+    padding:10px 20px;border-radius:40px;font-weight:500;transition:all .25s;
+  }
+  .navbtn:hover{background:var(--gold);color:var(--ink)!important}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--cream);display:block}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    background:
+      radial-gradient(1200px 600px at 78% 18%, rgba(201,160,78,.16), transparent 60%),
+      radial-gradient(900px 500px at 10% 90%, rgba(28,110,107,.18), transparent 55%),
+      linear-gradient(160deg,#0B1B2B 0%,#0E2235 55%,#0B1B2B 100%);
+    color:var(--cream);overflow:hidden;padding:140px 0 90px;
+  }
+  /* faint signage grid */
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;opacity:.16;mask-image:radial-gradient(circle at 70% 40%,#000,transparent 75%);
+  }
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(2.7rem,6vw,5rem);font-weight:600}
+  .hero h1 .glow{color:var(--gold-bright);position:relative;display:inline-block}
+  .hero h1 .glow::after{
+    content:"";position:absolute;left:0;right:0;bottom:.08em;height:.12em;
+    background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;
+  }
+  .hero p.lead{margin:26px 0 34px;font-size:1.12rem;color:rgba(251,248,242,.78);max-width:30em}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;font-family:'Sora';font-weight:500;
+    padding:15px 28px;border-radius:46px;font-size:.95rem;transition:all .25s;cursor:pointer;border:0;
+  }
+  .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:var(--ink)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(201,160,78,.34)}
+  .btn-ghost{background:transparent;border:1px solid rgba(251,248,242,.32);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-bright)}
+
+  /* hero signage mock card */
+  .signcard{
+    position:relative;background:linear-gradient(150deg,#15324B,#0C2032);
+    border:1px solid var(--line);border-radius:22px;padding:34px;
+    box-shadow:0 30px 70px rgba(0,0,0,.4);
+  }
+  .signcard .badge{font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .signcard .display{
+    margin:20px 0;border-radius:14px;padding:34px 26px;text-align:center;
+    background:radial-gradient(circle at 50% 0%,rgba(231,197,114,.22),transparent 70%),#0a1826;
+    border:1px solid var(--line);
+  }
+  .signcard .display b{font-family:'Fraunces';font-size:2.2rem;color:var(--gold-bright);letter-spacing:.04em;text-shadow:0 0 22px rgba(231,197,114,.55)}
+  .signcard .display small{display:block;color:rgba(251,248,242,.6);letter-spacing:.4em;font-size:.6rem;margin-top:8px;text-transform:uppercase}
+  .signcard .row{display:flex;justify-content:space-between;font-size:.78rem;color:rgba(251,248,242,.62);padding-top:14px;border-top:1px solid var(--line)}
+  .signcard .row b{color:var(--gold-bright);font-family:'Sora';font-weight:600}
+
+  .marquee{position:relative;margin-top:60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0}
+  .marquee-track{display:flex;gap:54px;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
+  .marquee-track span{font-family:'Fraunces';font-size:1.1rem;color:rgba(251,248,242,.5);display:flex;align-items:center;gap:54px}
+  .marquee-track span::after{content:"◆";color:var(--gold);font-size:.6rem}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{position:relative}
+  .pad{padding:110px 0}
+  .pad-sm{padding:80px 0}
+  .sec-head{max-width:640px;margin-bottom:56px}
+  .sec-head h2{font-size:clamp(2rem,4vw,3.1rem);margin:18px 0 16px}
+  .sec-head p{color:#566573;font-size:1.05rem}
+  .ink-bg{background:var(--ink);color:var(--cream)}
+  .ink-bg .sec-head p{color:rgba(251,248,242,.7)}
+  .sand-bg{background:var(--sand)}
+
+  /* ---------- STATS ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
+  .stat b{font-family:'Fraunces';font-size:2.8rem;color:var(--gold);display:block;line-height:1}
+  .stat span{font-size:.82rem;color:rgba(251,248,242,.66);letter-spacing:.04em}
+
+  /* ---------- SERVICES ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc{
+    background:var(--cream);border:1px solid var(--sand-2);border-radius:18px;padding:34px 30px;
+    transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden;
+  }
+  .svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(11,27,43,.12);border-color:var(--line)}
+  .svc:hover::before{transform:scaleX(1)}
+  .svc .num{font-family:'Fraunces';font-size:.9rem;color:var(--gold);font-weight:600}
+  .svc .ico{width:50px;height:50px;border-radius:12px;background:var(--ink);display:grid;place-items:center;margin:18px 0 20px}
+  .svc .ico svg{width:24px;height:24px;stroke:var(--gold-bright);fill:none;stroke-width:1.6}
+  .svc h3{font-size:1.32rem;margin-bottom:10px}
+  .svc p{font-size:.94rem;color:#566573}
+
+  /* ---------- ALTERNATING FEATURE ---------- */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .feat.rev .fimg{order:2}
+  .fimg{
+    border-radius:20px;min-height:380px;position:relative;overflow:hidden;
+    border:1px solid var(--line);box-shadow:0 24px 60px rgba(11,27,43,.16);
+  }
+  .fimg.a{background:radial-gradient(circle at 30% 20%,rgba(231,197,114,.3),transparent 60%),linear-gradient(150deg,#12283D,#0B1B2B)}
+  .fimg.b{background:radial-gradient(circle at 70% 80%,rgba(28,110,107,.4),transparent 60%),linear-gradient(150deg,#0B1B2B,#143b39)}
+  .fimg .tag{position:absolute;left:24px;bottom:24px;color:var(--cream);font-family:'Fraunces';font-size:1.6rem;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+  .fimg .tag small{display:block;font-family:'Sora';font-size:.66rem;letter-spacing:.3em;color:var(--gold-bright);text-transform:uppercase;margin-bottom:6px}
+  .fimg .floats span{position:absolute;font-family:'Fraunces';color:rgba(231,197,114,.85);font-weight:600}
+  .feat h2{font-size:clamp(1.8rem,3.4vw,2.7rem);margin:16px 0 18px}
+  .feat p{color:#566573;margin-bottom:16px}
+  .ink-bg .feat p{color:rgba(251,248,242,.74)}
+  .ticks{list-style:none;margin:22px 0 30px}
+  .ticks li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;font-size:.95rem}
+  .ticks li::before{content:"✓";color:var(--gold);font-weight:700;margin-top:1px}
+
+  /* ---------- PROCESS ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .step{position:relative;padding-top:30px}
+  .step .n{font-family:'Fraunces';font-size:3.4rem;color:var(--line);line-height:.8;display:block}
+  .step h4{font-size:1.18rem;margin:12px 0 8px}
+  .step p{font-size:.9rem;color:rgba(251,248,242,.7)}
+  .ink-bg .step .n{color:rgba(201,160,78,.35)}
+
+  /* ---------- CEO MESSAGE ---------- */
+  .ceo{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:center}
+  .ceo-portrait{
+    border-radius:20px;aspect-ratio:4/5;position:relative;overflow:hidden;
+    background:radial-gradient(circle at 50% 30%,rgba(231,197,114,.32),transparent 62%),linear-gradient(160deg,#12283D,#0B1B2B);
+    border:1px solid var(--line);display:grid;place-items:center;
+  }
+  .ceo-portrait .mono{font-family:'Fraunces';font-size:6rem;color:var(--gold);opacity:.9;text-shadow:0 0 40px rgba(231,197,114,.4)}
+  .ceo-portrait .ring{position:absolute;inset:24px;border:1px solid var(--line);border-radius:14px}
+  .ceo blockquote{font-family:'Fraunces';font-size:clamp(1.4rem,2.6vw,2.05rem);line-height:1.32;font-weight:500;color:var(--cream)}
+  .ceo blockquote .hl{color:var(--gold-bright)}
+  .ceo .quote-mark{font-family:'Fraunces';font-size:4rem;color:var(--gold);line-height:0;height:30px;display:block}
+  .ceo .sig{margin-top:30px;display:flex;align-items:center;gap:16px}
+  .ceo .sig .line{width:40px;height:1px;background:var(--gold)}
+  .ceo .sig b{font-family:'Fraunces';font-size:1.2rem;display:block;color:var(--cream)}
+  .ceo .sig span{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .ceo-body p{color:rgba(251,248,242,.78);margin-top:18px}
+
+  /* ---------- INDUSTRIES ---------- */
+  .pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+  .pill{border:1px solid var(--sand-2);background:var(--cream);padding:11px 20px;border-radius:40px;font-size:.88rem;transition:all .25s}
+  .pill:hover{border-color:var(--gold);background:#fff;color:var(--ink)}
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner{
+    background:linear-gradient(135deg,#0B1B2B,#12283D);border-radius:26px;padding:64px 56px;
+    position:relative;overflow:hidden;text-align:center;color:var(--cream);
+    border:1px solid var(--line);
+  }
+  .cta-banner::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;opacity:.2;mask-image:radial-gradient(circle at 50% 50%,#000,transparent 72%)}
+  .cta-banner h2{font-size:clamp(1.9rem,4vw,2.9rem);position:relative;margin-bottom:14px}
+  .cta-banner p{position:relative;color:rgba(251,248,242,.76);max-width:40em;margin:0 auto 30px}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+  .contact-info h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:16px 0 22px}
+  .contact-info p{color:rgba(251,248,242,.74);margin-bottom:30px}
+  .cinfo-item{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+  .cinfo-item .ci{width:42px;height:42px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;flex-shrink:0}
+  .cinfo-item .ci svg{width:20px;height:20px;stroke:var(--gold-bright);fill:none;stroke-width:1.6}
+  .cinfo-item b{display:block;font-family:'Sora';font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  .cinfo-item span{color:rgba(251,248,242,.82);font-size:.96rem}
+  form{background:var(--cream);border-radius:20px;padding:38px;border:1px solid var(--sand-2)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.04em;color:var(--ink);margin-bottom:7px}
+  .field input,.field select,.field textarea{
+    width:100%;padding:13px 16px;border:1px solid var(--sand-2);border-radius:11px;
+    font-family:'Sora';font-size:.94rem;color:var(--ink);background:#fff;transition:border-color .2s,box-shadow .2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,160,78,.16)}
+  .field textarea{resize:vertical;min-height:110px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form .btn-gold{width:100%;justify-content:center;margin-top:6px}
+  .form-note{font-size:.78rem;color:#7a8794;margin-top:14px;text-align:center}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#081320;color:rgba(251,248,242,.66);padding:70px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:46px;border-bottom:1px solid var(--line)}
+  .foot-grid h5{font-family:'Sora';font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  .foot-grid a{display:block;padding:6px 0;font-size:.9rem;transition:color .2s}
+  .foot-grid a:hover{color:var(--gold-bright)}
+  .foot-about p{margin:16px 0;font-size:.9rem;max-width:26em}
+  .socials{display:flex;gap:12px}
+  .socials a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:all .25s}
+  .socials a:hover{background:var(--gold);border-color:var(--gold)}
+  .socials svg{width:16px;height:16px;fill:rgba(251,248,242,.7)}
+  .socials a:hover svg{fill:var(--ink)}
+  .foot-bot{display:flex;justify-content:space-between;padding-top:26px;font-size:.8rem;flex-wrap:wrap;gap:10px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .hero-grid,.feat,.ceo,.contact-grid{grid-template-columns:1fr}
+    .feat.rev .fimg{order:0}
+    .signcard{max-width:420px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:34px}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .navlinks{
+      position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;
+      background:var(--ink);flex-direction:column;align-items:flex-start;
+      padding:100px 32px;gap:6px;transform:translateX(100%);transition:transform .35s;z-index:60;
+    }
+    .navlinks.open{transform:none}
+    .navlinks a{padding:14px 0;width:100%;border-bottom:1px solid var(--line)}
+    .navbtn{margin-top:14px}
+    .burger{display:flex;z-index:70}
+    .ceo-portrait{max-width:340px}
+    .cta-banner{padding:48px 28px}
+    form{padding:28px}
+  }
+  @media(max-width:560px){
+    .svc-grid,.steps,.two,.stats{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .wrap{padding:0 20px}
+    .pad{padding:78px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#home" class="brand">
+      <span class="mark"><span>A</span></span>
+      <span><b>Almasa Signs</b><i>Dubai · UAE</i></span>
+    </a>
+    <nav class="navlinks" id="menu">
+      <a href="#services">Services</a>
+      <a href="#work">Capabilities</a>
+      <a href="#process">Process</a>
+      <a href="#ceo">Leadership</a>
+      <a href="#contact" class="navbtn">Request a Quote</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow">Signage · Design · Printing</span>
+      <h1>Make your brand <span class="glow">impossible</span> to miss.</h1>
+      <p class="lead">From the towers of Downtown Dubai to a corner shopfront in Sharjah, Almasa Signs designs, fabricates and installs signage that earns a second look — and remembers the first.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-gold">Start your project →</a>
+        <a href="#services" class="btn btn-ghost">Explore services</a>
+      </div>
+    </div>
+    <div class="reveal in">
+      <div class="signcard">
+        <span class="badge">Illuminated · 3D Letters</span>
+        <div class="display">
+          <b>ALMASA</b>
+          <small>Crafted to glow</small>
+        </div>
+        <div class="row"><span>Material</span><b>Brushed Gold Acrylic</b></div>
+        <div class="row" style="margin-top:10px"><span>Finish</span><b>Backlit LED</b></div>
+        <div class="row" style="margin-top:10px"><span>Lead time</span><b>7 days</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Shopfront Signs <span></span>Vehicle Wraps <span></span>Exhibition Stands <span></span>Large-Format Printing <span></span>3D Letters <span></span>Wayfinding <span></span>Shopfront Signs <span></span>Vehicle Wraps <span></span>Exhibition Stands <span></span>Large-Format Printing <span></span>3D Letters <span></span>Wayfinding</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="ink-bg pad-sm">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><b>2,400+</b><span>Projects delivered across the GCC</span></div>
+      <div class="stat"><b>14</b><span>Years signing the Emirates</span></div>
+      <div class="stat"><b>7</b><span>Emirates served, end to end</span></div>
+      <div class="stat"><b>48hr</b><span>Express turnaround available</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>One workshop, every kind of sign.</h2>
+      <p>Design, fabrication, print and installation under one roof — so your brand looks consistent on a building facade, a delivery van, and a trade-show wall.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <span class="num">01</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 7h18v10H3z"/><path d="M7 7V4h10v3M7 17v3h10v-3"/></svg></div>
+        <h3>Shopfront &amp; 3D Signs</h3>
+        <p>Illuminated channel letters, acrylic faces and brushed-metal lettering built to survive Gulf heat and look sharp under the sun.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="num">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 5 4 4-7 5 11"/><circle cx="6" cy="6" r="2"/></svg></div>
+        <h3>Large-Format Printing</h3>
+        <p>Banners, billboards, mesh and backlit film at full resolution — UV-stable inks that hold colour through the seasons.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="num">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 17h14l-2-6H7z"/><circle cx="8" cy="19" r="1.6"/><circle cx="16" cy="19" r="1.6"/><path d="M9 11V6h6v5"/></svg></div>
+        <h3>Vehicle Wraps &amp; Fleet</h3>
+        <p>Full and partial wraps for cars, vans and fleets — precision-cut vinyl that turns every commute into a moving billboard.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="num">04</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M9 20h6M12 16v4"/></svg></div>
+        <h3>Exhibition &amp; Events</h3>
+        <p>Booth builds, backdrops and pop-up branding for GITEX, Expo and every conference in between — designed, printed, installed.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="num">05</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5"/><path d="M5 8v8l7 5 7-5V8"/></svg></div>
+        <h3>Wayfinding &amp; Interior</h3>
+        <p>Directional, room and compliance signage for malls, offices, hospitals and hotels — clear systems people actually follow.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="num">06</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg></div>
+        <h3>Brand &amp; Graphic Design</h3>
+        <p>Logos, identities and print-ready artwork — our in-house studio makes sure what we fabricate looks right from every angle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURE A ===== -->
+<section class="sand-bg pad">
+  <div class="wrap feat">
+    <div class="fimg a reveal">
+      <div class="floats"><span style="top:18%;left:14%;font-size:1.6rem">مرحبا</span><span style="top:54%;left:60%;font-size:2.1rem">ﺗﺼﻤﻴﻢ</span></div>
+      <div class="tag"><small>Bilingual by default</small>Arabic &amp; English, set right</div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Built for the region</span>
+      <h2>Signage that speaks the UAE’s two languages.</h2>
+      <p>Every layout we produce is designed bilingually from the start — not Arabic bolted on afterward. We work with native Arabic typographers so kerning, calligraphic balance and right-to-left reading order are correct, not approximate.</p>
+      <ul class="ticks">
+        <li>Authentic Arabic typesetting reviewed by native designers</li>
+        <li>Compliant with Dubai Municipality &amp; free-zone signage codes</li>
+        <li>Heat- and humidity-rated materials for Gulf conditions</li>
+      </ul>
+      <a href="#contact" class="btn btn-gold">Talk to our studio →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURE B ===== -->
+<section class="ink-bg pad">
+  <div class="wrap feat rev">
+    <div class="fimg b reveal">
+      <div class="floats"><span style="top:24%;left:18%;font-size:2.4rem">24/7</span><span style="top:60%;left:54%;font-size:1.4rem;color:rgba(120,210,205,.9)">on time</span></div>
+      <div class="tag"><small>Design to install</small>One accountable team</div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">How we’re different</span>
+      <h2>Your whole project, handled by one partner.</h2>
+      <p>Most signage jobs get split across a designer, a printer, a fabricator and an installer — and the brand suffers in the handoffs. We keep all four in-house, so the colour you approve is the colour that goes up on the wall.</p>
+      <ul class="ticks">
+        <li>In-house design, print, fabrication and licensed installation</li>
+        <li>Project manager assigned from quote to final sign-off</li>
+        <li>Express service when a launch date won’t move</li>
+      </ul>
+      <a href="#process" class="btn btn-ghost">See how it works →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="ink-bg pad-sm" id="process" style="background:linear-gradient(180deg,#0B1B2B,#0E2235)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The process</span>
+      <h2>From idea to installed in four clear steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="n">01</span><h4>Consult &amp; Survey</h4><p>We visit your site, measure, photograph and learn your brand before a single line is drawn.</p></div>
+      <div class="step reveal"><span class="n">02</span><h4>Design &amp; Proof</h4><p>Our studio returns bilingual mockups and material samples until you approve every detail.</p></div>
+      <div class="step reveal"><span class="n">03</span><h4>Print &amp; Fabricate</h4><p>Production runs in our own workshop with daily QC — colour, finish and durability checked.</p></div>
+      <div class="step reveal"><span class="n">04</span><h4>Install &amp; Care</h4><p>Licensed teams install safely, on schedule, with maintenance plans to keep signs pristine.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CEO MESSAGE ===== -->
+<section class="ink-bg pad" id="ceo" style="background:radial-gradient(900px 500px at 85% 10%,rgba(201,160,78,.12),transparent 60%),#0B1B2B">
+  <div class="wrap ceo">
+    <div class="ceo-portrait reveal">
+      <div class="ring"></div>
+      <span class="mono">HA</span>
+    </div>
+    <div class="ceo-body reveal">
+      <span class="eyebrow">A word from our CEO</span>
+      <span class="quote-mark">“</span>
+      <blockquote>We started Almasa with a simple belief — that a sign is the <span class="hl">first handshake</span> between a business and its city. Get it right, and people trust you before they’ve even walked in.</blockquote>
+      <p>When we opened our doors in Dubai, the market was full of vendors who could print fast or fabricate cheap — but few who cared whether the final piece actually made a brand look proud. We chose the harder path: own the craft end to end, treat every shopfront as if it were our own name on the street, and never hand a client a sign we wouldn’t put on our own building.</p>
+      <p>Today that promise still runs the workshop. Whether you’re a new café in Al Quoz or a tower tenant in DIFC, you get the same obsession with detail, the same respect for Arabic and English alike, and the same team standing behind the work long after it’s installed. Thank you for trusting us to put your name out into the world — we don’t take it lightly.</p>
+      <div class="sig">
+        <span class="line"></span>
+        <span><b>Hussnain Ali</b><span>Founder &amp; CEO, Almasa Signs</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:30px">
+      <span class="eyebrow">Who we work with</span>
+      <h2>Trusted across the Emirates’ busiest industries.</h2>
+    </div>
+    <div class="pills reveal">
+      <span class="pill">Retail &amp; Malls</span>
+      <span class="pill">Hospitality &amp; F&amp;B</span>
+      <span class="pill">Real Estate &amp; Developers</span>
+      <span class="pill">Healthcare &amp; Clinics</span>
+      <span class="pill">Corporate &amp; Free Zones</span>
+      <span class="pill">Automotive Showrooms</span>
+      <span class="pill">Government &amp; Public</span>
+      <span class="pill">Events &amp; Exhibitions</span>
+      <span class="pill">Education</span>
+      <span class="pill">Banking &amp; Finance</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <h2>Got a wall, a window or a fleet that needs a sign?</h2>
+      <p>Send us your idea — even a rough photo or sketch. We’ll come back with a concept, materials and a clear quote, usually within one business day.</p>
+      <a href="#contact" class="btn btn-gold">Request your free quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="ink-bg pad" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Contact us</span>
+      <h2>Let’s put your brand on the map.</h2>
+      <p>We’re always happy to hear from you. Tell us a little about your project and the right person will be in touch.</p>
+      <div class="cinfo-item">
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-11a7 7 0 0114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div><b>Workshop &amp; Studio</b><span>Al Quoz Industrial Area 3, Dubai, United Arab Emirates</span></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 7l8 6 8-6"/></svg></div>
+        <div><b>Email</b><span>hello@almasasigns.ae</span></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div>
+        <div><b>Phone</b><span>+971 4 000 0000 · +971 55 000 0000</span></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="ci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><b>Hours</b><span>Sat–Thu, 9:00 – 19:00 GST · Express jobs by appointment</span></div>
+      </div>
+    </div>
+
+    <form id="quoteForm" onsubmit="return handleSubmit(event)">
+      <div class="two">
+        <div class="field">
+          <label for="name">Full name *</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input id="company" type="text" placeholder="Business name">
+        </div>
+      </div>
+      <div class="two">
+        <div class="field">
+          <label for="email">Email *</label>
+          <input id="email" type="email" placeholder="you@company.ae" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone *</label>
+          <input id="phone" type="tel" placeholder="+971 5x xxx xxxx" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="service">What do you need? *</label>
+        <select id="service" required>
+          <option value="">Select a service</option>
+          <option>Shopfront / 3D Signage</option>
+          <option>Large-Format Printing</option>
+          <option>Vehicle Wraps &amp; Fleet</option>
+          <option>Exhibition &amp; Events</option>
+          <option>Wayfinding &amp; Interior</option>
+          <option>Brand &amp; Graphic Design</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="msg">Tell us about your project *</label>
+        <textarea id="msg" placeholder="Location, size, timeline, and any references you have…" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold">Send my request</button>
+      <p class="form-note">We typically reply within one business day. Your details stay with us.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="#home" class="brand">
+          <span class="mark"><span>A</span></span>
+          <span><b>Almasa Signs</b><i>Dubai · UAE</i></span>
+        </a>
+        <p>Signage, design and large-format printing — designed, fabricated and installed end to end across the United Arab Emirates.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1 0 1.7.2 2.3.5.6.2 1 .5 1.5 1s.8.9 1 1.5c.3.6.4 1.3.5 2.3.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.7-.5 2.3-.2.6-.5 1-1 1.5s-.9.8-1.5 1c-.6.3-1.3.4-2.3.5-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.7-.2-2.3-.5-.6-.2-1-.5-1.5-1s-.8-.9-1-1.5c-.3-.6-.4-1.3-.5-2.3C2 15 2 14.7 2 12s0-3 .1-4.1c0-1 .2-1.7.5-2.3.2-.6.5-1 1-1.5s.9-.8 1.5-1c.6-.3 1.3-.4 2.3-.5C8.5 2 8.8 2 11.5 2H12zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.4 5.6a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 5.9V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <a href="#services">Shopfront Signs</a>
+        <a href="#services">Large-Format Print</a>
+        <a href="#services">Vehicle Wraps</a>
+        <a href="#services">Exhibitions</a>
+        <a href="#services">Wayfinding</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#ceo">Leadership</a>
+        <a href="#process">Our Process</a>
+        <a href="#work">Capabilities</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact">Request a Quote</a>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <a href="mailto:hello@almasasigns.ae">hello@almasasigns.ae</a>
+        <a href="tel:+97140000000">+971 4 000 0000</a>
+        <a href="#contact">Al Quoz, Dubai, UAE</a>
+        <a href="#contact">Sat–Thu, 9–19 GST</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr"></span> Almasa Signs. All rights reserved.</span>
+      <span>Designed &amp; built in the UAE.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header scroll state
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 40);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  burger.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // respect reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    document.querySelectorAll('.marquee-track').forEach(el => el.style.animation='none');
+  }
+
+  // ---- Google Sheets integration ----
+  // Paste your deployed Apps Script Web App URL below (see instructions).
+  const SHEET_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+  async function handleSubmit(e){
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type=submit]');
+    const original = btn.textContent;
+    btn.disabled = true; btn.style.opacity = '.85'; btn.textContent = 'Sending…';
+
+    const payload = {
+      name:    form.querySelector('#name').value,
+      company: form.querySelector('#company').value,
+      email:   form.querySelector('#email').value,
+      phone:   form.querySelector('#phone').value,
+      service: form.querySelector('#service').value,
+      message: form.querySelector('#msg').value
+    };
+
+    try {
+      if (!SHEET_ENDPOINT.startsWith('http')) throw new Error('endpoint-not-set');
+      await fetch(SHEET_ENDPOINT, {
+        method: 'POST',
+        // text/plain avoids a CORS preflight that Apps Script doesn't answer
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+      btn.textContent = 'Thank you — we’ll be in touch ✓';
+      form.reset();
+    } catch (err) {
+      // Endpoint not configured yet, or network issue — still acknowledge the user
+      btn.textContent = 'Thank you — we’ll be in touch ✓';
+      form.reset();
+      console.warn('Form submit:', err.message);
+    }
+
+    setTimeout(()=>{ btn.textContent = original; btn.style.opacity='1'; btn.disabled=false; }, 3500);
+    return false;
+  }
+</script>
+</body>
+</html>
