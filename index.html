@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Almasa Signs — Signage, Design & Printing | Dubai, UAE</title>
-<meta name="description" content="Almasa Signs is a Dubai-based signage, design and large-format printing company. From shopfront signs to event branding, we make brands impossible to miss across the UAE.">
+<title>Al Tareeq — Signage, Design & Printing | Dubai, UAE</title>
+<meta name="description" content="Al Tareeq is a Dubai-based signage, design and large-format printing company. From shopfront signs to event branding, we make brands impossible to miss across the UAE.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -184,6 +184,28 @@
   .step p{font-size:.9rem;color:rgba(251,248,242,.7)}
   .ink-bg .step .n{color:rgba(201,160,78,.35)}
 
+  /* ---------- PORTFOLIO ---------- */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .work{
+    position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--sand-2);
+    aspect-ratio:4/3;cursor:pointer;background:var(--ink);
+  }
+  .work.tall{aspect-ratio:auto;grid-row:span 2}
+  .work img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;filter:saturate(1.02)}
+  .work:hover img{transform:scale(1.06)}
+  .work::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(7,19,32,.86) 0%,rgba(7,19,32,.18) 46%,transparent 70%);
+    transition:opacity .35s;opacity:.9;
+  }
+  .work .meta{position:absolute;left:20px;right:20px;bottom:18px;z-index:2;transform:translateY(6px);transition:transform .35s}
+  .work:hover .meta{transform:none}
+  .work .cat{font-family:'Sora';font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-bright);display:block;margin-bottom:5px}
+  .work .pname{font-family:'Fraunces';font-size:1.18rem;color:var(--cream);line-height:1.15}
+  .work .corner{position:absolute;top:14px;right:14px;z-index:2;width:30px;height:30px;border-radius:50%;border:1px solid rgba(231,197,114,.55);display:grid;place-items:center;opacity:0;transform:scale(.8);transition:all .35s}
+  .work:hover .corner{opacity:1;transform:none}
+  .work .corner svg{width:14px;height:14px;stroke:var(--gold-bright);fill:none;stroke-width:2}
+
   /* ---------- CEO MESSAGE ---------- */
   .ceo{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:center}
   .ceo-portrait{
@@ -260,29 +282,63 @@
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:900px){
     .hero-grid,.feat,.ceo,.contact-grid{grid-template-columns:1fr}
+    .hero-grid{gap:40px}
+    .feat{gap:40px}
     .feat.rev .fimg{order:0}
-    .signcard{max-width:420px}
-    .stats{grid-template-columns:repeat(2,1fr);gap:34px}
+    .signcard{max-width:420px;margin:0 auto}
+    .stats{grid-template-columns:repeat(2,1fr);gap:30px}
     .svc-grid{grid-template-columns:1fr 1fr}
     .steps{grid-template-columns:1fr 1fr}
+    .work-grid{grid-template-columns:1fr 1fr}
+    .work.tall{grid-row:span 1;aspect-ratio:4/3}
     .navlinks{
-      position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;
+      position:fixed;top:0;right:0;height:100vh;width:80%;max-width:320px;
       background:var(--ink);flex-direction:column;align-items:flex-start;
-      padding:100px 32px;gap:6px;transform:translateX(100%);transition:transform .35s;z-index:60;
+      padding:96px 32px;gap:6px;transform:translateX(100%);transition:transform .35s;z-index:60;
     }
     .navlinks.open{transform:none}
     .navlinks a{padding:14px 0;width:100%;border-bottom:1px solid var(--line)}
-    .navbtn{margin-top:14px}
+    .navbtn{margin-top:14px;width:100%;text-align:center}
     .burger{display:flex;z-index:70}
-    .ceo-portrait{max-width:340px}
+    .ceo-portrait{max-width:300px;margin:0 auto}
     .cta-banner{padding:48px 28px}
     form{padding:28px}
+    .fimg{min-height:300px}
   }
-  @media(max-width:560px){
-    .svc-grid,.steps,.two,.stats{grid-template-columns:1fr}
-    .foot-grid{grid-template-columns:1fr 1fr}
+  @media(max-width:600px){
     .wrap{padding:0 20px}
-    .pad{padding:78px 0}
+    .pad{padding:64px 0}
+    .pad-sm{padding:52px 0}
+    .sec-head{margin-bottom:40px}
+    .svc-grid,.steps,.two,.stats{grid-template-columns:1fr;gap:16px}
+    .work-grid{grid-template-columns:1fr;gap:14px}
+    .stats{gap:28px;padding:36px 0}
+    .stat b{font-size:2.4rem}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+    .foot-about{grid-column:1 / -1}
+    /* hero: keep headline readable, never overflow */
+    .hero{padding:118px 0 66px;min-height:auto}
+    .hero h1{font-size:clamp(2.1rem,9vw,3rem)}
+    .hero p.lead{font-size:1rem;margin:22px 0 28px}
+    .hero-cta{flex-direction:column}
+    .hero-cta .btn{width:100%;justify-content:center}
+    .btn{padding:14px 24px}
+    .signcard{padding:26px}
+    .signcard .display b{font-size:1.8rem}
+    .marquee{margin-top:44px}
+    .marquee-track span{font-size:.95rem;gap:38px}
+    .sec-head h2,.feat h2,.contact-info h2{font-size:1.7rem}
+    .cta-banner h2{font-size:1.6rem}
+    .ceo blockquote{font-size:1.25rem}
+    .ceo .quote-mark{font-size:3rem}
+    .pills{gap:9px}
+    .pill{padding:9px 16px;font-size:.82rem}
+    .cinfo-item{padding:16px 0}
+    .foot-bot{flex-direction:column;gap:6px}
+  }
+  @media(max-width:380px){
+    .foot-grid{grid-template-columns:1fr}
+    .signcard .row{font-size:.72rem}
   }
 </style>
 </head>
@@ -292,12 +348,12 @@
 <header id="hdr">
   <div class="wrap nav">
     <a href="#home" class="brand">
-      <span class="mark"><span>A</span></span>
-      <span><b>Almasa Signs</b><i>Dubai · UAE</i></span>
+      <span class="mark"><span>T</span></span>
+      <span><b>Al Tareeq</b><i>Dubai · UAE</i></span>
     </a>
     <nav class="navlinks" id="menu">
       <a href="#services">Services</a>
-      <a href="#work">Capabilities</a>
+      <a href="#work">Work</a>
       <a href="#process">Process</a>
       <a href="#ceo">Leadership</a>
       <a href="#contact" class="navbtn">Request a Quote</a>
@@ -312,7 +368,7 @@
     <div class="reveal in">
       <span class="eyebrow">Signage · Design · Printing</span>
       <h1>Make your brand <span class="glow">impossible</span> to miss.</h1>
-      <p class="lead">From the towers of Downtown Dubai to a corner shopfront in Sharjah, Almasa Signs designs, fabricates and installs signage that earns a second look — and remembers the first.</p>
+      <p class="lead">From the towers of Downtown Dubai to a corner shopfront in Sharjah, Al Tareeq designs, fabricates and installs signage that earns a second look — and remembers the first.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-gold">Start your project →</a>
         <a href="#services" class="btn btn-ghost">Explore services</a>
@@ -322,7 +378,7 @@
       <div class="signcard">
         <span class="badge">Illuminated · 3D Letters</span>
         <div class="display">
-          <b>ALMASA</b>
+          <b>AL TAREEQ</b>
           <small>Crafted to glow</small>
         </div>
         <div class="row"><span>Material</span><b>Brushed Gold Acrylic</b></div>
@@ -443,6 +499,59 @@
   </div>
 </section>
 
+<!-- ===== PORTFOLIO ===== -->
+<section class="pad" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Selected work</span>
+      <h2>Signs we’ve put up around the UAE.</h2>
+      <p>A look at recent projects — shopfronts, fleet wraps, glass branding, retail graphics and event builds, designed and installed by our own team.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work reveal">
+        <img src="images/shopfront-illuminated.jpg" alt="Illuminated shopfront signage on a Dubai building facade at night" loading="lazy">
+        <div class="corner"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="meta"><span class="cat">Illuminated Shopfront</span><span class="pname">Facade signs, Dubai tower</span></div>
+      </div>
+      <div class="work reveal">
+        <img src="images/building-3d-letters.jpg" alt="3D letter signage on the Baenninger Trading building exterior" loading="lazy">
+        <div class="corner"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="meta"><span class="cat">3D Building Letters</span><span class="pname">Warehouse facade branding</span></div>
+      </div>
+      <div class="work reveal tall">
+        <img src="images/office-glass-graphics.jpg" alt="Decorative frosted glass graphics in a trading office reception" loading="lazy">
+        <div class="corner"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="meta"><span class="cat">Glass Branding</span><span class="pname">Etched office partition graphics</span></div>
+      </div>
+      <div class="work reveal">
+        <img src="images/vehicle-fleet-wrap.jpg" alt="Branded delivery truck wrap for Baenninger Trading" loading="lazy">
+        <div class="corner"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="meta"><span class="cat">Vehicle &amp; Fleet</span><span class="pname">Full delivery truck wrap</span></div>
+      </div>
+      <div class="work reveal">
+        <img src="images/office-frosted-partition.jpg" alt="Frosted glass partition with geometric pattern in an office" loading="lazy">
+        <div class="corner"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="meta"><span class="cat">Frosted Privacy Film</span><span class="pname">Patterned office partitions</span></div>
+      </div>
+      <div class="work reveal tall">
+        <img src="images/mall-seasonal-decor.jpg" alt="Illuminated gold and blue Ramadan installation in a shopping mall" loading="lazy">
+        <div class="corner"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="meta"><span class="cat">Seasonal Installation</span><span class="pname">Ramadan mall centrepiece</span></div>
+      </div>
+      <div class="work reveal">
+        <img src="images/event-entrance-arch.jpg" alt="Branded event entrance arch for a music festival in Dubai" loading="lazy">
+        <div class="corner"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="meta"><span class="cat">Events &amp; Exhibitions</span><span class="pname">Festival entrance arch</span></div>
+      </div>
+      <div class="work reveal">
+        <img src="images/retail-wall-graphics.jpg" alt="Printed wall graphics for a seafood retail counter" loading="lazy">
+        <div class="corner"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="meta"><span class="cat">Retail Graphics</span><span class="pname">Seafood counter wall print</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== PROCESS ===== -->
 <section class="ink-bg pad-sm" id="process" style="background:linear-gradient(180deg,#0B1B2B,#0E2235)">
   <div class="wrap">
@@ -469,12 +578,12 @@
     <div class="ceo-body reveal">
       <span class="eyebrow">A word from our CEO</span>
       <span class="quote-mark">“</span>
-      <blockquote>We started Almasa with a simple belief — that a sign is the <span class="hl">first handshake</span> between a business and its city. Get it right, and people trust you before they’ve even walked in.</blockquote>
+      <blockquote>We started Al Tareeq with a simple belief — that a sign is the <span class="hl">first handshake</span> between a business and its city. Get it right, and people trust you before they’ve even walked in.</blockquote>
       <p>When we opened our doors in Dubai, the market was full of vendors who could print fast or fabricate cheap — but few who cared whether the final piece actually made a brand look proud. We chose the harder path: own the craft end to end, treat every shopfront as if it were our own name on the street, and never hand a client a sign we wouldn’t put on our own building.</p>
       <p>Today that promise still runs the workshop. Whether you’re a new café in Al Quoz or a tower tenant in DIFC, you get the same obsession with detail, the same respect for Arabic and English alike, and the same team standing behind the work long after it’s installed. Thank you for trusting us to put your name out into the world — we don’t take it lightly.</p>
       <div class="sig">
         <span class="line"></span>
-        <span><b>Hussnain Ali</b><span>Founder &amp; CEO, Almasa Signs</span></span>
+        <span><b>Hussnain Ali</b><span>Founder &amp; CEO, Al Tareeq</span></span>
       </div>
     </div>
   </div>
@@ -526,7 +635,7 @@
       </div>
       <div class="cinfo-item">
         <div class="ci"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 7l8 6 8-6"/></svg></div>
-        <div><b>Email</b><span>hello@almasasigns.ae</span></div>
+        <div><b>Email</b><span>hello@altareeqsigns.ae</span></div>
       </div>
       <div class="cinfo-item">
         <div class="ci"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div>
@@ -588,8 +697,8 @@
     <div class="foot-grid">
       <div class="foot-about">
         <a href="#home" class="brand">
-          <span class="mark"><span>A</span></span>
-          <span><b>Almasa Signs</b><i>Dubai · UAE</i></span>
+          <span class="mark"><span>T</span></span>
+          <span><b>Al Tareeq</b><i>Dubai · UAE</i></span>
         </a>
         <p>Signage, design and large-format printing — designed, fabricated and installed end to end across the United Arab Emirates.</p>
         <div class="socials">
@@ -610,20 +719,20 @@
         <h5>Company</h5>
         <a href="#ceo">Leadership</a>
         <a href="#process">Our Process</a>
-        <a href="#work">Capabilities</a>
+        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
         <a href="#contact">Request a Quote</a>
       </div>
       <div>
         <h5>Get in touch</h5>
-        <a href="mailto:hello@almasasigns.ae">hello@almasasigns.ae</a>
+        <a href="mailto:hello@altareeqsigns.ae">hello@altareeqsigns.ae</a>
         <a href="tel:+97140000000">+971 4 000 0000</a>
         <a href="#contact">Al Quoz, Dubai, UAE</a>
         <a href="#contact">Sat–Thu, 9–19 GST</a>
       </div>
     </div>
     <div class="foot-bot">
-      <span>© <span id="yr"></span> Almasa Signs. All rights reserved.</span>
+      <span>© <span id="yr"></span> Al Tareeq. All rights reserved.</span>
       <span>Designed &amp; built in the UAE.</span>
     </div>
   </div>
